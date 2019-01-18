@@ -28,15 +28,10 @@ namespace ExporterProject
         {
             //КОЛИЧЕСТВО ";" В СТРОКЕ
             string columnNames = textBox4.Text ;
-            int i;
             int columnCount = 0;
-            foreach (char ch in columnNames)
+            for (int i = 0; i < columnNames.Length; i++)
             {
-                i = 0;
-                for (int l = 0; columnNames.Length > l; l++)
-                {
-                    if (ch == columnNames[l]) i++;
-                } columnCount = i;
+                if (columnNames[i] == ';') columnCount++;
             }
             //Чтение типов данных полей
             string columnTypes = textBox3.Text;                
@@ -87,7 +82,7 @@ namespace ExporterProject
                         if (!line.StartsWith("No."))
                         {
                             string tmpStr = line;
-                            tmpStr = tmpStr.Remove(0, tmpStr.IndexOf(";") + 1);
+                           // tmpStr = tmpStr.Remove(0, tmpStr.IndexOf(";") + 1);
                             for (int k = 0; k < columnCount; k++)
                             {
                                 string s = tmpStr + ";";

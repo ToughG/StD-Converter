@@ -34,16 +34,10 @@ namespace ExporterProject
             string layoutNames = lines[0] + ";" ;
             //КОЛИЧЕСТВО ";" В СТРОКЕ
             string columnNames = layoutNames;
-            int i;
             int columnCount = 0;
-            foreach (char ch in columnNames)
+            for (int i = 0; i < columnNames.Length; i++)
             {
-                i = 0;
-                for (int l = 0; columnNames.Length > l; l++)
-                {
-                    if (ch == columnNames[l]) i++;
-                }
-                columnCount = i;
+                if (columnNames[i] == ';') columnCount++;
             }
             //Проверка на длину наименования 
             string tmpStr = "";
