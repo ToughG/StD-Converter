@@ -12,6 +12,7 @@ namespace ExporterProject
     {
         public static void convertFileInfo(ref string filePath)
         {
+
             FileInfo fiPath;
             if (Path.IsPathRooted(filePath))
             {

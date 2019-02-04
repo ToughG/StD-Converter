@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,7 +20,6 @@ namespace ExporterProject
         public Main()
         {
             InitializeComponent();
-
         }              
         private void button3_Click(object sender, EventArgs e)
         {
@@ -28,8 +28,17 @@ namespace ExporterProject
             string[] args = { pathCSV, pathDBF };
             CovertToDBF.convertToDbf(args, textBox4, textBox3);
         }
-        private void button1_Click(object sender, EventArgs e)
+        void progBar()
         {
+            Invoke((MethodInvoker)delegate () { progressBar1.Style = ProgressBarStyle.Marquee; });
+            Invoke((MethodInvoker)delegate () { progressBar1.MarqueeAnimationSpeed = 20; });
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {                        
+            Thread thread1 = new Thread(new ThreadStart(progBar));
+            thread1.IsBackground = true;
+            thread1.Start();
+
             DataTable dataTable = new DataTable();
             string connectionString = @"Data Source = 212.42.101.123; Initial Catalog = StructureService; User ID = importeruser; Password = vNe7NT;";
             //@"Data Source=.\SQLExpress;Initial Catalog=Report;Integrated Security=True;";
@@ -42,12 +51,16 @@ namespace ExporterProject
             {
                 da.Fill(dataTable);
             }
-            catch (Exception ex) { MessageBox.Show("Неверный путь к Таблице в Базе Данных! " + ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неверный путь к Таблице в Базе Данных! " + ex.Message);
+            }
             conn.Close();
             dataTable.WriteToCsvFile(@"ExportedCSV.csv", textBox5);
             MessageBox.Show("Конвертация в CSV выполнена!");
-            
+            progressBar1.Style = ProgressBarStyle.Blocks;        
         }
+       
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Messages.MessageShow("info");
@@ -65,33 +78,12 @@ namespace ExporterProject
         {
             Messages.MessageShow("help");
         }
-
-        //Garbage
+        //--------------------------------------------------------Garbage----------------------------------------------------------------------
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
         private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label12_Click(object sender, EventArgs e)
         {
 
         }
@@ -115,6 +107,7 @@ namespace ExporterProject
         {
 
         }
+
     }
 }
 

@@ -57,6 +57,7 @@
             this.общаяПодсказкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label14 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,7 +119,6 @@
             this.label1.Size = new System.Drawing.Size(158, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Наименование полей";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -141,7 +141,6 @@
             this.label4.Size = new System.Drawing.Size(159, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Например: D://Test.dbf";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -153,7 +152,6 @@
             this.label5.Size = new System.Drawing.Size(194, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "Например: ExporterTestCSV";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox3
             // 
@@ -207,7 +205,6 @@
             this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 14;
             this.label7.Text = "DBF файлу";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -275,7 +272,6 @@
             this.label12.Size = new System.Drawing.Size(158, 17);
             this.label12.TabIndex = 20;
             this.label12.Text = "Наименование полей";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -351,10 +347,21 @@
             this.label14.TabIndex = 24;
             this.label14.Text = "в исходном DBF";
             // 
-            // Form1
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(1169, 50);
+            this.progressBar1.MarqueeAnimationSpeed = 20;
+            this.progressBar1.Maximum = 1000;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(511, 23);
+            this.progressBar1.Step = 20;
+            this.progressBar1.TabIndex = 25;
+            // 
+            // Main
             // 
             this.BackgroundImage = global::ExporterProject.Properties.Resources.stdconverter_texture;
             this.ClientSize = new System.Drawing.Size(1750, 526);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -379,7 +386,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "StD Converter";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -421,6 +428,7 @@
         private System.Windows.Forms.ToolStripMenuItem заполнениеНаименованийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem общаяПодсказкаToolStripMenuItem;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
