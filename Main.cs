@@ -39,7 +39,7 @@ namespace ExporterProject
         {
             DataTable dataTable = new DataTable();
             //Строка подключения к базе данных
-            string connectionString = @"Data Source = 212.42.101.123; Initial Catalog = StructureService; User ID = importeruser; Password = vNe7NT;";
+            string connectionString = @"    your connection    ";
             string query = "select * from dbo." + textBox2.Text;
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(query, conn);
