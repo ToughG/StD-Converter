@@ -117,10 +117,10 @@ namespace ExporterProject
             {
                 MessageBox.Show("Ошибка: не найден файл данных *.CSV ! " + ex.Message);
             }
-            finally
-            {
-                MessageBox.Show("\n Конвертация в DBF выполнена!");
-            }
+            //finally
+            //{                 
+            //    MessageBox.Show("\n Конвертация в DBF выполнена!");
+            //}
         }
     }
 }

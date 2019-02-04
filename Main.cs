@@ -55,8 +55,8 @@ namespace ExporterProject
             }
             conn.Close();
             this.Invoke((MethodInvoker)delegate () { dataTable.WriteToCsvFile(@"documents/ExportedCSV.csv", textBox5); });
-            MessageBox.Show("Конвертация в CSV выполнена!");
             this.Invoke((MethodInvoker)delegate () { progressBar1.Style = ProgressBarStyle.Blocks; });
+            MessageBox.Show("Конвертация в CSV выполнена!");           
         }
         //вызов метода конвертации в DBF
         async void progBar2(int times)
@@ -66,6 +66,7 @@ namespace ExporterProject
             string[] args = { pathCSV, pathDBF };
             CovertToDBF.convertToDbf(args, textBox4, textBox3);
             this.Invoke((MethodInvoker)delegate () { progressBar1.Style = ProgressBarStyle.Blocks; });
+            MessageBox.Show("\n Конвертация в DBF выполнена!");
         }
 
         //Вывод HELP сообщений
