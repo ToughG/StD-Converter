@@ -252,7 +252,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.textBox5.Location = new System.Drawing.Point(178, 133);
             this.textBox5.Multiline = true;
@@ -301,8 +301,8 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.заполнениеТиповToolStripMenuItem,
             this.заполнениеНаименованийToolStripMenuItem,
+            this.заполнениеТиповToolStripMenuItem,
             this.общаяПодсказкаToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
@@ -398,7 +398,7 @@
 
         #endregion
 
-        
+
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;

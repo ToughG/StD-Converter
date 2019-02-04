@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
@@ -7,7 +6,7 @@ namespace ExporterProject
 {
     public static class ConvertToCSV
     {
-        
+        //Метод записывания данных из базы данных в файл CSV
         public static void WriteToCsvFile(this DataTable dataTable, string filePath, TextBox textBox5)
         {
             StringBuilder fileContent = new StringBuilder();
@@ -31,7 +30,7 @@ namespace ExporterProject
 
             System.IO.File.WriteAllText(filePath, fileContent.ToString());
             string[] lines = System.IO.File.ReadAllLines(filePath, Encoding.UTF8);
-            string layoutNames = lines[0] + ";" ;
+            string layoutNames = lines[0] + ";";
             //КОЛИЧЕСТВО ";" В СТРОКЕ
             string columnNames = layoutNames;
             int columnCount = 0;

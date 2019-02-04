@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SocialExplorer.IO.FastDBF;
@@ -12,7 +11,7 @@ namespace ExporterProject
     {
         public static void convertFileInfo(ref string filePath)
         {
-
+            //Проверка наличие файлов по указанному пути
             FileInfo fiPath;
             if (Path.IsPathRooted(filePath))
             {
@@ -25,17 +24,17 @@ namespace ExporterProject
             }
             filePath = fiPath.FullName;
         }
-        public static void convertToDbf(string[] args, TextBox textBox4,TextBox textBox3) 
+        public static void convertToDbf(string[] args, TextBox textBox4, TextBox textBox3)
         {
             //КОЛИЧЕСТВО ";" В СТРОКЕ
-            string columnNames = textBox4.Text ;
+            string columnNames = textBox4.Text;
             int columnCount = 0;
             for (int i = 0; i < columnNames.Length; i++)
             {
                 if (columnNames[i] == ';') columnCount++;
             }
             //Чтение типов данных полей
-            string columnTypes = textBox3.Text;                
+            string columnTypes = textBox3.Text;
             string csvFile = args[0];
             string dbfFile = args[1];
             if (args.Length == 2)
@@ -47,28 +46,29 @@ namespace ExporterProject
             convertFileInfo(ref dbfFile);
             try
             {
+                //Создание нового DBF файла
                 DbfFile odbf = new DbfFile(Encoding.GetEncoding(1251));
                 odbf.Open(dbfFile, FileMode.OpenOrCreate);
-                //ДОБАВЛЕНИЕ ЗАГОЛОВКОВ    
-                string str,col; char type;
-                int n1 = 0, n2 = 0 , ind = 0;
+                //ДОБАВЛЕНИЕ ЗАГОЛОВКОВ ИЗ СТРОКИ УКАЗАННОЙ В TextBox 5  
+                string str, col; char type;
+                int n1 = 0, n2 = 0, ind = 0;
                 for (int k = 0; k < columnCount; k++)
                 {
                     int kk = 0;
                     kk = columnNames.IndexOf(';');
                     col = columnNames.Substring(0, kk);
                     ind = columnTypes.IndexOf(";");
-                    str = columnTypes.Substring(0, ind+1);
+                    str = columnTypes.Substring(0, ind + 1);
                     type = str[0];
                     str = str.Remove(0, 1);
                     n1 = Int32.Parse(str.Substring(0, str.IndexOf(",")));
-                    str = str.Remove(0, str.IndexOf(",")+1);
+                    str = str.Remove(0, str.IndexOf(",") + 1);
                     n2 = Int32.Parse(str.Substring(0, str.IndexOf(";")));
                     if (type == 'N') { odbf.Header.AddColumn(new DbfColumn(col, DbfColumn.DbfColumnType.Number, n1, n2)); }
-                    if(type == 'C') { odbf.Header.AddColumn(new DbfColumn(col, DbfColumn.DbfColumnType.Character, n1, n2)); }
+                    if (type == 'C') { odbf.Header.AddColumn(new DbfColumn(col, DbfColumn.DbfColumnType.Character, n1, n2)); }
                     columnNames = columnNames.Remove(0, columnNames.IndexOf(";") + 1);
                     columnTypes = columnTypes.Remove(0, columnTypes.IndexOf(";") + 1);
-                } 
+                }
                 DbfRecord orec = new DbfRecord(odbf.Header);
                 orec.AllowDecimalTruncate = true;
                 orec.AllowIntegerTruncate = true;
@@ -83,7 +83,6 @@ namespace ExporterProject
                         if (!line.StartsWith("No."))
                         {
                             string tmpStr = line;
-                           // tmpStr = tmpStr.Remove(0, tmpStr.IndexOf(";") + 1);
                             for (int k = 0; k < columnCount; k++)
                             {
                                 string s = tmpStr + ";";

@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using System.Windows.Forms;
 
 namespace ExporterProject
 {
+    //Класс содержащий текст HELP сообщений
     class Messages
     {
-        public static void MessageShow(string s) {
+        public static void MessageShow(string s)
+        {
             if (s == "info")
             {
                 MessageBox.Show("                               StD Converter" + "\r\n" + "\r\n" +
                              "  Программа для конвертирования таблиц " + "\r\n" +
-                             "баз данных в файлы с расширением DBF. " + "\r\n" + 
+                             "баз данных в файлы с расширением DBF. " + "\r\n" +
                              "В процессе конвертирования так же можно " + "\r\n" +
                              "получить промежуточный файл CSV, который " + "\r\n" +
                              "хранится в корневой папке программы." + "\r\n" + "\r\n" +
