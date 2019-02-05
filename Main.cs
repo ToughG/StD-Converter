@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ExporterProject
@@ -38,8 +39,21 @@ namespace ExporterProject
         void progBar1(int times)
         {
             DataTable dataTable = new DataTable();
+            //Путь к текстовому файлу с путём к базе данных и чтение пути в переменную dbp
+            string path = @"resources\databasepath.txt";
+            string dbp = "";
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    dbp = (sr.ReadToEnd());
+                }
+            }catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
             //Строка подключения к базе данных
-            string connectionString = @"    your connection    ";
+            string connectionString = @"" + dbp;
             string query = "select * from dbo." + textBox2.Text;
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(query, conn);
@@ -54,14 +68,14 @@ namespace ExporterProject
                 MessageBox.Show("Неверный путь к Таблице в Базе Данных! " + ex.Message);
             }
             conn.Close();
-            this.Invoke((MethodInvoker)delegate () { dataTable.WriteToCsvFile(@"documents/ExportedCSV.csv", textBox5); });
+            this.Invoke((MethodInvoker)delegate () { dataTable.WriteToCsvFile(@"resources/ExportedCSV.csv", textBox5); });
             this.Invoke((MethodInvoker)delegate () { progressBar1.Style = ProgressBarStyle.Blocks; });
             MessageBox.Show("Конвертация в CSV выполнена!");           
         }
         //вызов метода конвертации в DBF
         async void progBar2(int times)
         {
-            pathCSV = "documents/ExportedCSV.csv";
+            pathCSV = "resources/ExportedCSV.csv";
             pathDBF = textBox1.Text;
             string[] args = { pathCSV, pathDBF };
             CovertToDBF.convertToDbf(args, textBox4, textBox3);
