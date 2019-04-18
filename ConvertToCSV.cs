@@ -7,7 +7,7 @@ namespace ExporterProject
     public static class ConvertToCSV
     {
         //Метод записывания данных из базы данных в файл CSV
-        public static void WriteToCsvFile(this DataTable dataTable, string filePath, TextBox textBox5)
+        public static string WriteToCsvFile(this DataTable dataTable, string filePath, TextBox textBox5)
         {
             StringBuilder fileContent = new StringBuilder();
 
@@ -53,7 +53,7 @@ namespace ExporterProject
                 tmpStr = tmpStr + s + ";";
                 layoutNames = layoutNames.Remove(0, layoutNames.IndexOf(";") + 1);
             }
-            textBox5.Text = tmpStr;
+            return tmpStr;
         }
     }
 }

@@ -24,17 +24,17 @@ namespace ExporterProject
             }
             filePath = fiPath.FullName;
         }
-        public static void convertToDbf(string[] args, TextBox textBox4, TextBox textBox3)
+        public static void convertToDbf(string[] args, string s1, string s2)
         {
             //КОЛИЧЕСТВО ";" В СТРОКЕ
-            string columnNames = textBox4.Text;
+            string columnNames = s1;
             int columnCount = 0;
             for (int i = 0; i < columnNames.Length; i++)
             {
                 if (columnNames[i] == ';') columnCount++;
             }
             //Чтение типов данных полей
-            string columnTypes = textBox3.Text;
+            string columnTypes = s2;
             string csvFile = args[0];
             string dbfFile = args[1];
             if (args.Length == 2)

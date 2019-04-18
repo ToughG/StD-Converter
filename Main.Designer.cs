@@ -32,15 +32,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,12 +48,21 @@
             this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.заполнениеТиповToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заполнениеНаименованийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заполнениеТиповToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.общаяПодсказкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label14 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.указаниеПутиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,10 +73,10 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(844, 348);
+            this.button3.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 19.25F);
+            this.button3.Location = new System.Drawing.Point(959, 361);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 66);
+            this.button3.Size = new System.Drawing.Size(284, 117);
             this.button3.TabIndex = 1;
             this.button3.Text = "Конвертировать в DBF (из файла CSV)";
             this.button3.UseVisualStyleBackColor = false;
@@ -83,7 +88,7 @@
             this.textBox1.Location = new System.Drawing.Point(178, 361);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(653, 42);
+            this.textBox1.Size = new System.Drawing.Size(736, 42);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -91,23 +96,13 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(844, 36);
+            this.button1.Location = new System.Drawing.Point(819, 44);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 66);
             this.button1.TabIndex = 3;
             this.button1.Text = "Конвертировать в CSV (из Базы Данных)";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(178, 50);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(653, 42);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -131,17 +126,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Наименование таблицы";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(379, 406);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 18);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Например: D://Test.dbf";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -153,16 +137,6 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Например: ExporterTestCSV";
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(178, 272);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1554, 42);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -173,16 +147,6 @@
             this.label3.Size = new System.Drawing.Size(133, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Путь к исходному";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(178, 197);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1554, 42);
-            this.textBox4.TabIndex = 12;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label6
             // 
@@ -303,17 +267,11 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.заполнениеНаименованийToolStripMenuItem,
             this.заполнениеТиповToolStripMenuItem,
-            this.общаяПодсказкаToolStripMenuItem});
+            this.общаяПодсказкаToolStripMenuItem,
+            this.указаниеПутиToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.toolStripMenuItem1.Text = "Помощь";
-            // 
-            // заполнениеТиповToolStripMenuItem
-            // 
-            this.заполнениеТиповToolStripMenuItem.Name = "заполнениеТиповToolStripMenuItem";
-            this.заполнениеТиповToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.заполнениеТиповToolStripMenuItem.Text = "Заполнение типов";
-            this.заполнениеТиповToolStripMenuItem.Click += new System.EventHandler(this.заполнениеТиповToolStripMenuItem_Click);
             // 
             // заполнениеНаименованийToolStripMenuItem
             // 
@@ -321,6 +279,13 @@
             this.заполнениеНаименованийToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.заполнениеНаименованийToolStripMenuItem.Text = "Заполнение наименований";
             this.заполнениеНаименованийToolStripMenuItem.Click += new System.EventHandler(this.заполнениеНаименованийToolStripMenuItem_Click);
+            // 
+            // заполнениеТиповToolStripMenuItem
+            // 
+            this.заполнениеТиповToolStripMenuItem.Name = "заполнениеТиповToolStripMenuItem";
+            this.заполнениеТиповToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.заполнениеТиповToolStripMenuItem.Text = "Заполнение типов";
+            this.заполнениеТиповToolStripMenuItem.Click += new System.EventHandler(this.заполнениеТиповToolStripMenuItem_Click);
             // 
             // общаяПодсказкаToolStripMenuItem
             // 
@@ -357,10 +322,98 @@
             this.progressBar1.Step = 20;
             this.progressBar1.TabIndex = 25;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(178, 203);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(1554, 32);
+            this.comboBox1.TabIndex = 26;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(178, 280);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(1554, 32);
+            this.comboBox2.TabIndex = 27;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(178, 60);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(624, 32);
+            this.comboBox3.TabIndex = 28;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox2.Location = new System.Drawing.Point(0, 489);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(10, 18);
+            this.textBox2.TabIndex = 29;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 19.25F);
+            this.button2.Location = new System.Drawing.Point(1249, 361);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(284, 117);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "Конвертировать в Excel (из файла CSV)";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(745, 367);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(164, 30);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "Указать путь к файлу";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // указаниеПутиToolStripMenuItem
+            // 
+            this.указаниеПутиToolStripMenuItem.Name = "указаниеПутиToolStripMenuItem";
+            this.указаниеПутиToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.указаниеПутиToolStripMenuItem.Text = "Указание пути";
+            this.указаниеПутиToolStripMenuItem.Click += new System.EventHandler(this.указаниеПутиToolStripMenuItem_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(379, 414);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 18);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Например: D:\\test";
+            // 
             // Main
             // 
             this.BackgroundImage = global::ExporterProject.Properties.Resources.stdconverter_texture;
             this.ClientSize = new System.Drawing.Size(1750, 526);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -372,14 +425,10 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
@@ -403,15 +452,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -429,6 +474,15 @@
         private System.Windows.Forms.ToolStripMenuItem общаяПодсказкаToolStripMenuItem;
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private System.Windows.Forms.ToolStripMenuItem указаниеПутиToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
     }
 }
 
