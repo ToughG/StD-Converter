@@ -105,7 +105,7 @@ namespace ExporterProject
             string[] dblist2 = dblist.ToArray();
             comboBox3.Items.AddRange(dblist2);
         }
-        //-----------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------
         //Запуск ProgressBar в основном потоке и конвертация в CSV во втором потоке
         private void button1_Click(object sender, EventArgs e)
         {
