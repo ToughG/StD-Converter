@@ -51,6 +51,7 @@
             this.заполнениеНаименованийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заполнениеТиповToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.общаяПодсказкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.указаниеПутиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label14 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -61,7 +62,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
-            this.указаниеПутиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -210,9 +210,9 @@
             this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(32, 217);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 17);
+            this.label11.Size = new System.Drawing.Size(124, 17);
             this.label11.TabIndex = 18;
-            this.label11.Text = "в исходном DBF";
+            this.label11.Text = "в конечном DBF";
             // 
             // textBox5
             // 
@@ -294,6 +294,13 @@
             this.общаяПодсказкаToolStripMenuItem.Text = "Общая подсказка";
             this.общаяПодсказкаToolStripMenuItem.Click += new System.EventHandler(this.общаяПодсказкаToolStripMenuItem_Click);
             // 
+            // указаниеПутиToolStripMenuItem
+            // 
+            this.указаниеПутиToolStripMenuItem.Name = "указаниеПутиToolStripMenuItem";
+            this.указаниеПутиToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.указаниеПутиToolStripMenuItem.Text = "Указание пути";
+            this.указаниеПутиToolStripMenuItem.Click += new System.EventHandler(this.указаниеПутиToolStripMenuItem_Click);
+            // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
@@ -308,9 +315,9 @@
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(32, 295);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(121, 17);
+            this.label14.Size = new System.Drawing.Size(124, 17);
             this.label14.TabIndex = 24;
-            this.label14.Text = "в исходном DBF";
+            this.label14.Text = "в конечном DBF";
             // 
             // progressBar1
             // 
@@ -384,13 +391,6 @@
             this.button4.Text = "Указать путь к файлу";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // указаниеПутиToolStripMenuItem
-            // 
-            this.указаниеПутиToolStripMenuItem.Name = "указаниеПутиToolStripMenuItem";
-            this.указаниеПутиToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.указаниеПутиToolStripMenuItem.Text = "Указание пути";
-            this.указаниеПутиToolStripMenuItem.Click += new System.EventHandler(this.указаниеПутиToolStripMenuItem_Click);
             // 
             // label4
             // 

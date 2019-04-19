@@ -74,7 +74,7 @@ namespace ExporterProject
             List<String> dblist = new List<string>();
             try
             {
-                string sql = "Select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE='BASE TABLE'";
+                string sql = "Select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_TYPE='BASE TABLE' ORDER BY TABLE_NAME";
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = sql;
